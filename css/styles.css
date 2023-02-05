@@ -205,6 +205,7 @@ button {
   padding: 16px 32px;
   min-width: 169px;
   height: 56px;
+  border: none;
   transition: background-color var(--main-transition);
 }
 .hero-btn:hover,
@@ -421,17 +422,22 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color var(--main-transition);
+  transition: border-color 250ms var(--main-transition);
 }
 .customers-link:hover,
 .customers-link:focus {
   border-color: var(--pressed-state-color);
 }
-.customers-link:hover > .customers-icon {
+.customers-link:hover > .customers-icon,
+.customers-link:focus > .customers-icon {
+  transition: fill 250ms var(--main-transition);
+}
+.customers-link:hover > .customers-icon,
+.customers-link:focus > .customers-icon {
   fill: var(--pressed-state-color);
 }
 .customers-icon {
-  transition: fill var(--main-transition);
+  transition: fill 250 var(--main-transition);
   fill: #8e8f99;
 }
 /* ==============Customers end================================ */
@@ -564,6 +570,7 @@ button {
   text-align: center;
   letter-spacing: 0.04em;
   color: #ffffff;
+  border: none;
   gap: 16px;
 }
 .footer-subscription-icon {
@@ -607,14 +614,15 @@ button {
   width: 24px;
   height: 24px;
   border-radius: 50%;
+  border: none;
   background-color: var(--light-third-color);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: background-image 250ms var(--main-transition), fill 250ms var(--main-transition);
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+  transition: background-color 250ms var(--main-transition), fill 250ms var(--main-transition);
 }
 .modal-close:hover,
 .modal-close:focus {
-  background-image: url(../images/modal-click-2.svg);
-  border: none;
+  background-color: var(--pressed-state-color);
+
   fill: #ffffff;
 }
 .modal-text {
@@ -729,6 +737,9 @@ button {
   cursor: pointer;
   margin-right: 8px;
 }
+.modal-form-link {
+  color: #4d5ae5;
+}
 .btn-modal-submit {
   display: inline-block;
   font-family: inherit;
@@ -742,6 +753,8 @@ button {
   letter-spacing: 0.04em;
   padding: 16px 32px;
   color: #ffffff;
+  border: none;
+
   background-color: var(--primary-brand-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
